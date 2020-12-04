@@ -13,7 +13,7 @@
 		9254005C2579050A003A45B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9254005B2579050A003A45B1 /* Preview Assets.xcassets */; };
 		925400672579050A003A45B1 /* getGreenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400662579050A003A45B1 /* getGreenerTests.swift */; };
 		925400722579050A003A45B1 /* getGreenerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400712579050A003A45B1 /* getGreenerUITests.swift */; };
-		925400832579056F003A45B1 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400822579056F003A45B1 /* functions.swift */; };
+		925400832579056F003A45B1 /* classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400822579056F003A45B1 /* classes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		9254006D2579050A003A45B1 /* getGreenerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = getGreenerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		925400712579050A003A45B1 /* getGreenerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGreenerUITests.swift; sourceTree = "<group>"; };
 		925400732579050A003A45B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		925400822579056F003A45B1 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		925400822579056F003A45B1 /* classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			children = (
 				9254005425790508003A45B1 /* getGreenerApp.swift */,
 				9254005625790508003A45B1 /* ContentView.swift */,
-				925400822579056F003A45B1 /* functions.swift */,
+				925400822579056F003A45B1 /* classes.swift */,
 				925400582579050A003A45B1 /* Assets.xcassets */,
 				9254005D2579050A003A45B1 /* Info.plist */,
 				9254005A2579050A003A45B1 /* Preview Content */,
@@ -264,7 +264,7 @@
 			files = (
 				9254005725790508003A45B1 /* ContentView.swift in Sources */,
 				9254005525790508003A45B1 /* getGreenerApp.swift in Sources */,
-				925400832579056F003A45B1 /* functions.swift in Sources */,
+				925400832579056F003A45B1 /* classes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
