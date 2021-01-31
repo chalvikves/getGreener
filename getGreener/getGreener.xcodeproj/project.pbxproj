@@ -3,17 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921D147A25B5E7B4006B811C /* iTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 921D147925B5E7B4006B811C /* iTextField */; };
+		921D147F25B5FD2E006B811C /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D147E25B5FD2E006B811C /* Global.swift */; };
+		924B2AFC258B71C600137DE6 /* friendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B2AFB258B71C600137DE6 /* friendsView.swift */; };
+		924B2B0F258C220F00137DE6 /* SunburstDiagram in Frameworks */ = {isa = PBXBuildFile; productRef = 924B2B0E258C220F00137DE6 /* SunburstDiagram */; };
 		9254005525790508003A45B1 /* getGreenerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254005425790508003A45B1 /* getGreenerApp.swift */; };
 		9254005725790508003A45B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254005625790508003A45B1 /* ContentView.swift */; };
 		925400592579050A003A45B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925400582579050A003A45B1 /* Assets.xcassets */; };
 		9254005C2579050A003A45B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9254005B2579050A003A45B1 /* Preview Assets.xcassets */; };
 		925400672579050A003A45B1 /* getGreenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400662579050A003A45B1 /* getGreenerTests.swift */; };
 		925400722579050A003A45B1 /* getGreenerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400712579050A003A45B1 /* getGreenerUITests.swift */; };
-		925400832579056F003A45B1 /* classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400822579056F003A45B1 /* classes.swift */; };
+		925400832579056F003A45B1 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925400822579056F003A45B1 /* types.swift */; };
+		926DAF3725A79680009929F2 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DAF3625A79680009929F2 /* FriendView.swift */; };
+		926DAF4225A91316009929F2 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DAF4125A91316009929F2 /* PieChart.swift */; };
+		926E7CA325A4F7200053DE4E /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E7CA225A4F7200053DE4E /* PersonView.swift */; };
+		92B6585325B4797B002B1C81 /* DailyQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585225B4797B002B1C81 /* DailyQuestions.swift */; };
+		92B6585B25B49FE8002B1C81 /* HealthGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585A25B49FE8002B1C81 /* HealthGroupBoxStyle.swift */; };
+		92B6586025B4D12D002B1C81 /* TransportQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */; };
+		92B6586725B58BCB002B1C81 /* TransportationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6586625B58BCB002B1C81 /* TransportationMethod.swift */; };
+		92C499D5258822AF0062940F /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C499D4258822AF0062940F /* user.swift */; };
+		92C499DE25882A620062940F /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 92C499DD25882A620062940F /* SwiftUICharts */; };
+		92C499E3258A736C0062940F /* CircleAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C499E2258A736C0062940F /* CircleAvatar.swift */; };
+		92FDBDB3259129C400B64B7C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDBDB2259129C400B64B7C /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921D147E25B5FD2E006B811C /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		924B2AFB258B71C600137DE6 /* friendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsView.swift; sourceTree = "<group>"; };
 		9254005125790508003A45B1 /* getGreener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getGreener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9254005425790508003A45B1 /* getGreenerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGreenerApp.swift; sourceTree = "<group>"; };
 		9254005625790508003A45B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,7 +63,17 @@
 		9254006D2579050A003A45B1 /* getGreenerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = getGreenerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		925400712579050A003A45B1 /* getGreenerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGreenerUITests.swift; sourceTree = "<group>"; };
 		925400732579050A003A45B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		925400822579056F003A45B1 /* classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classes.swift; sourceTree = "<group>"; };
+		925400822579056F003A45B1 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
+		926DAF3625A79680009929F2 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		926DAF4125A91316009929F2 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		926E7CA225A4F7200053DE4E /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		92B6585225B4797B002B1C81 /* DailyQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestions.swift; sourceTree = "<group>"; };
+		92B6585A25B49FE8002B1C81 /* HealthGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyle.swift; sourceTree = "<group>"; };
+		92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportQuestion.swift; sourceTree = "<group>"; };
+		92B6586625B58BCB002B1C81 /* TransportationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationMethod.swift; sourceTree = "<group>"; };
+		92C499D4258822AF0062940F /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		92C499E2258A736C0062940F /* CircleAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatar.swift; sourceTree = "<group>"; };
+		92FDBDB2259129C400B64B7C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921D147A25B5E7B4006B811C /* iTextField in Frameworks */,
+				924B2B0F258C220F00137DE6 /* SunburstDiagram in Frameworks */,
+				92C499DE25882A620062940F /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				9254005425790508003A45B1 /* getGreenerApp.swift */,
+				921D147E25B5FD2E006B811C /* Global.swift */,
 				9254005625790508003A45B1 /* ContentView.swift */,
-				925400822579056F003A45B1 /* classes.swift */,
+				92B6586425B58B85002B1C81 /* Views */,
+				92C499E7258A7D610062940F /* Models */,
 				925400582579050A003A45B1 /* Assets.xcassets */,
 				9254005D2579050A003A45B1 /* Info.plist */,
 				9254005A2579050A003A45B1 /* Preview Content */,
@@ -133,6 +165,32 @@
 			path = getGreenerUITests;
 			sourceTree = "<group>";
 		};
+		92B6586425B58B85002B1C81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92FDBDB2259129C400B64B7C /* Home.swift */,
+				926E7CA225A4F7200053DE4E /* PersonView.swift */,
+				92B6585225B4797B002B1C81 /* DailyQuestions.swift */,
+				926DAF3625A79680009929F2 /* FriendView.swift */,
+				92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */,
+				924B2AFB258B71C600137DE6 /* friendsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92C499E7258A7D610062940F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				926DAF4125A91316009929F2 /* PieChart.swift */,
+				92B6585A25B49FE8002B1C81 /* HealthGroupBoxStyle.swift */,
+				92C499E2258A736C0062940F /* CircleAvatar.swift */,
+				925400822579056F003A45B1 /* types.swift */,
+				92C499D4258822AF0062940F /* user.swift */,
+				92B6586625B58BCB002B1C81 /* TransportationMethod.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +207,11 @@
 			dependencies = (
 			);
 			name = getGreener;
+			packageProductDependencies = (
+				92C499DD25882A620062940F /* SwiftUICharts */,
+				924B2B0E258C220F00137DE6 /* SunburstDiagram */,
+				921D147925B5E7B4006B811C /* iTextField */,
+			);
 			productName = getGreener;
 			productReference = 9254005125790508003A45B1 /* getGreener.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +283,11 @@
 				Base,
 			);
 			mainGroup = 9254004825790508003A45B1;
+			packageReferences = (
+				92C499DC25882A620062940F /* XCRemoteSwiftPackageReference "ChartView" */,
+				924B2B0D258C220F00137DE6 /* XCRemoteSwiftPackageReference "SwiftSunburstDiagram" */,
+				921D147825B5E7B4006B811C /* XCRemoteSwiftPackageReference "iTextField" */,
+			);
 			productRefGroup = 9254005225790508003A45B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,9 +330,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B6586725B58BCB002B1C81 /* TransportationMethod.swift in Sources */,
+				926E7CA325A4F7200053DE4E /* PersonView.swift in Sources */,
+				92B6585B25B49FE8002B1C81 /* HealthGroupBoxStyle.swift in Sources */,
+				92C499E3258A736C0062940F /* CircleAvatar.swift in Sources */,
+				92C499D5258822AF0062940F /* user.swift in Sources */,
 				9254005725790508003A45B1 /* ContentView.swift in Sources */,
 				9254005525790508003A45B1 /* getGreenerApp.swift in Sources */,
-				925400832579056F003A45B1 /* classes.swift in Sources */,
+				924B2AFC258B71C600137DE6 /* friendsView.swift in Sources */,
+				92FDBDB3259129C400B64B7C /* Home.swift in Sources */,
+				921D147F25B5FD2E006B811C /* Global.swift in Sources */,
+				926DAF3725A79680009929F2 /* FriendView.swift in Sources */,
+				925400832579056F003A45B1 /* types.swift in Sources */,
+				92B6586025B4D12D002B1C81 /* TransportQuestion.swift in Sources */,
+				926DAF4225A91316009929F2 /* PieChart.swift in Sources */,
+				92B6585325B4797B002B1C81 /* DailyQuestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +664,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		921D147825B5E7B4006B811C /* XCRemoteSwiftPackageReference "iTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+		924B2B0D258C220F00137DE6 /* XCRemoteSwiftPackageReference "SwiftSunburstDiagram" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lludo/SwiftSunburstDiagram.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		92C499DC25882A620062940F /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		921D147925B5E7B4006B811C /* iTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 921D147825B5E7B4006B811C /* XCRemoteSwiftPackageReference "iTextField" */;
+			productName = iTextField;
+		};
+		924B2B0E258C220F00137DE6 /* SunburstDiagram */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924B2B0D258C220F00137DE6 /* XCRemoteSwiftPackageReference "SwiftSunburstDiagram" */;
+			productName = SunburstDiagram;
+		};
+		92C499DD25882A620062940F /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92C499DC25882A620062940F /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9254004925790508003A45B1 /* Project object */;
 }
