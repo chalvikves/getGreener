@@ -8,5 +8,7 @@
 import SwiftUI
 
 class Global: ObservableObject {
-    @Published var progress = 1.0
+    @Published var progress = 0.0
+    @Published var selectedPieChartElement: Int? = nil
+    @Published var pieChartViewModel: PieChartViewModel = PieChartViewModel()
 }

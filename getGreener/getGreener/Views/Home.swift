@@ -6,73 +6,199 @@
 //
 
 import SwiftUI
-//import SunburstDiagram
-//
-//let configuration = SunburstConfiguration(nodes: [
-//    Node(name: "Food", showName: true, value: 10.0, backgroundColor: .systemBlue),
-//    Node(name: "Living", showName: false, value: 5.0, backgroundColor: .systemRed),
-//    Node(name: "Consumation", showName: false, value: 10.0, backgroundColor: .systemPurple),
-//    Node(name: "Transportation", showName: false, value: 50.0, backgroundColor: .systemTeal),
-//])
+import PartialSheet
 
 struct Home: View {
     
+    
+    
+    @StateObject var viewModel = HomeViewModel()
+    @StateObject var model = PersonViewModel()
+
+    
     var body: some View {
         
-        VStack{
-            Text("GetGreener")
-                .font(.largeTitle)
-                .foregroundColor(Color("Green"))
+        VStack(alignment: .leading){
             
-            ScrollView{
-                
-                //HStack{
-                //    Text("Översikt över dina utsläpp")
-                //        .foregroundColor(.primary)
+            HStack{
+                Text("Hej")
+                    .font(.largeTitle)
                     
-                //    Spacer()
-                //}.padding()
-                
-                //Divider()
-                //    .frame(width: UIScreen.main.bounds.width, height: 2)
-                //    .background(Color("DarkGreen"))
-                
-                Circle()
-                    .frame(width: 300, height: 300)
-                
-                Spacer()
-                
-                RoundedRectangle(cornerRadius: 15)
+                Text("Viktor")
+                    .font(.largeTitle)
+                    .fontWeight(.medium)
                     .foregroundColor(Color("Green"))
-                    .frame(height: 200)
-                    .padding()
-                    .overlay(
-                        VStack(alignment: .leading){
-                            Text("Tips för att minska ditt utsläpp")
-                                .font(.title3)
-                                .foregroundColor(Color("White"))
-                                .padding()
-                            
-                            Spacer()
-                        }.padding()
-                    ).padding(.bottom, 50)
                     
-                DailyQuestions()
-                //addToView()
-                
-                
+                Text("👋")
+                    .font(.largeTitle)
+            }
+            .padding(.top, 40)
+            
+            Spacer().frame(height: 15)
+
+            
+           
+            HStack{
+                Spacer()
+                Button(action: {
+                    viewModel.showDayWeekYear.toggle()
+                }, label: {
+                    HStack{
+                        Text(viewModel.selectedRange)
+                            .foregroundColor(Color("MainText"))
+                        
+                        Image(systemName: "chevron.down")
+                            .foregroundColor(Color(.systemGray2))
+                        
+                    }
+                })
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color(.systemGray2), lineWidth: 1)
+                )
+                .partialSheet(isPresented: $viewModel.showDayWeekYear){
+                    
+                    VStack(spacing: 0){
+                        Text("Välj tidsperiod")
+                            
+                        
+                        Spacer()
+                        
+                        Divider()
+                        
+                        Button(action: self.viewModel.setDay ){
+                            HStack{
+                                Text(viewModel.ranges[0])
+                                
+                                Spacer()
+                                
+                                Text("\( Int(150 / 24))")
+                                
+                                Text("kg/CO2")
+                                    
+                                Circle()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(viewModel.selectedRange == "Dag"  ? Color("Green") : Color(.clear))
+                                    
+                                    
+                            }
+                            .padding()
+                            .background(viewModel.selectedRange == "Dag" ? Color(.systemGray6) : Color(.clear))
+                            .foregroundColor(Color("MainText"))
+                        }
+                        
+                        Divider()
+                        
+                        Button(action: self.viewModel.setWeek ){
+                            HStack{
+                                Text(viewModel.ranges[1])
+                                
+                                Spacer()
+                                
+                                Text("\( Int(150 / 24))")
+                                
+                                Text("kg/CO2")
+                                    
+                                Circle()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(viewModel.selectedRange == "Månad"  ? Color("Green") : Color(.clear))
+                                    
+                                    
+                            }
+                            .padding()
+                            .background(viewModel.selectedRange == "Månad" ? Color(.systemGray6) : Color(.clear))
+                            .foregroundColor(Color("MainText"))
+                        }
+                        
+                        Divider()
+                        
+                        Button(action: self.viewModel.setYear ){
+                            HStack{
+                                Text(viewModel.ranges[2])
+                                
+                                Spacer()
+                                
+                                Text("\( Int(150 / 24))")
+                                
+                                Text("kg/CO2")
+                                    
+                                Circle()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(viewModel.selectedRange == "År"  ? Color("Green") : Color(.clear))
+                                    
+                                    
+                            }
+                            .padding()
+                            .background(viewModel.selectedRange == "År" ? Color(.systemGray6) : Color(.clear))
+                            .foregroundColor(Color("MainText"))
+                        }
+                        
+                        Divider()
+                        
+                        Spacer()
+                        
+                    }
+                    .frame(height: 300)
+                }
             }
             
+            Spacer().frame(height: 15)
+            
+            HStack{
+                Spacer()
+                
+                PieChart(viewModel: viewModel)
+                    .frame(width: UIScreen.main.bounds.size.width/1.3, height: 300)
+                    .padding(.all, 20)
+                    .shadow(radius: 15)
+                    .padding(.bottom, 10)
+                
+                Spacer()
+            }
+            
+            Color("Main")
+                .overlay(
+                    ForEach(0..<viewModel.data.count, id: \.self) {index in
+                        let element = viewModel.data[index]
+                        
+                        Button(action: {print("hi")}){
+                            HStack{
+                                Circle()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(element.color)
+                                
+                                Text(element.description)
+                                    .foregroundColor(Color("MainText"))
+                                
+                                Spacer()
+                                
+                                Text("\( Int(150 * element.percentage))")
+                                
+                                Text("kg/CO2")
+                                    .font(.caption)
+                                    .padding(.leading, -5)
+                                
+                            }
+                        }.padding(.vertical, 5)
+                        
+                        
+                    }.padding()
+                )
+                .cornerRadius(15)
+                .padding()
+                .shadow(color: Color("LightShadow"), radius: 5)
+                
+            
+           Spacer()
+                
             
         }
-        .padding(.bottom, 20)
-        .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
-        
-        
-        
-        
-        
+        .padding(.horizontal)
+        .addPartialSheet()
     }
+    
 }
 
 
@@ -83,59 +209,51 @@ struct Home_Previews: PreviewProvider {
     }
 }
 
-struct addToView : View {
+struct DetailedView: View {
+    var description: String
+    var icon: String
+    var information: String
+    var color: Color
     
     var body: some View {
+        ZStack{
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(color)
+                .frame(width: 200, height: 100)
         
-        VStack(spacing: 20){
-            
-            Text("Vardagsfrågor")
-                .font(.title)
-                .padding()
-            
-            Image("Ecology_Outline")
-                
-            
-            //Image(systemName: "globe")
-            //    .resizable()
-            //    .frame(width: 100, height: 100)
-            //    .padding(.bottom, 30)
-            //    .padding(.top, 30)
-        
-        ScrollView(showsIndicators: false){
-            
-                VStack(spacing: 8){
+            HStack{
+                Image(systemName: icon)
+                Text(description)
                     
-                    Divider()
-                    
-                    GroupBox(label: Label("Transport", systemImage: "car")){
-                        HealthValueView(value: "50", unit: "Kg")
-                    }
-                    .groupBoxStyle(HealthGroupBoxStyle(color: Color("Green"), destination: TransportQuestion() ))
-                    
-                    
-                    Divider()
-                    
-                    GroupBox(label: Label("Mat", systemImage: "leaf")){
-                        HealthValueView(value: "50", unit: "Kg")
-                    }.groupBoxStyle(HealthGroupBoxStyle(color: Color("Green"), destination: Text("Hello")))
-                    
-                    Divider()
-                    
-                    GroupBox(label: Label("Konsumption", systemImage: "case")){
-                        HealthValueView(value: "50", unit: "Kg")
-                    }.groupBoxStyle(HealthGroupBoxStyle(color: Color("Green"), destination: Text("Hello")))
-                    
-                    Divider()
-                    
-                }.padding()
-                
-                
-                
-                
-            }.edgesIgnoringSafeArea(.bottom)
-        
+            }.foregroundColor(.white)
+        }
     }
-    
 }
+
+struct TipsView: View {
+    var image: String
+    var title: String
+    var description: String
+    
+    var body: some View {
+  
+        HStack{
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .padding(.leading, -30)
+                
+            
+            Spacer()
+            
+            Text(description)
+                .padding(.trailing, 20)
+                .rotationEffect(Angle(degrees: 30))
+                
+            
+        }.padding(.horizontal)
+        
+    
+    }
 }
