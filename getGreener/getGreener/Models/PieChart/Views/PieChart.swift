@@ -10,6 +10,8 @@ import SwiftUI
 struct PieChart: View {
     @StateObject var viewModel: HomeViewModel
     @Environment(\.colorScheme) var colorScheme
+    var width: CGFloat?
+    var height: CGFloat?
     
     var body: some View {
         
@@ -23,7 +25,7 @@ struct PieChart: View {
                         
                         PieChartPiece(startDegree: Angle(degrees: lastDegree), endDegree: Angle(degrees: (lastDegree + currentEndDegree)))
                             .fill(currentData.color)
-                            .scaleEffect(index == viewModel.selectedElement ? 1.1 : 1.0)
+                            //.scaleEffect(index == viewModel.selectedElement ? 1.1 : 1.0)
                         
                         //GeometryReader { geometry in
                             //Text(currentData.description)
@@ -35,21 +37,23 @@ struct PieChart: View {
                             //    .scaleEffect(index == viewModel.selectedElement ? 1.1 : 1.0)
                         //}
                         
-                    }.onTapGesture(count: 1, perform: {
-                        withAnimation{
-                            if index == viewModel.selectedElement {
-                                viewModel.selectedElement = nil
-                            } else {
-                                viewModel.selectedElement = index
-                                viewModel.selected = true
-                            }
-                        }
-                    })
+                    }
+//                    .onTapGesture(count: 1, perform: {
+//                        withAnimation{
+//                            if index == viewModel.selectedElement {
+//                                viewModel.selectedElement = nil
+//                            } else {
+//                                viewModel.selectedElement = index
+//                                viewModel.selected = true
+//                            }
+//                        }
+//                    })
                     
                 }
+                .shadow(color: Color("LightShadow"), radius: 5)
                 Circle()
                     .foregroundColor(colorScheme == .dark ? .black : .white)
-                    .frame(width: 225, height: 225)
+                    .frame(width: width, height: height)
                     .overlay(
                         VStack{
                             
@@ -73,10 +77,12 @@ struct PieChart: View {
 //                            }
                             
                             Text("150")
-                                .font(.largeTitle)
+                                //.font(.largeTitle)
+                                .font(.title2)
                             
                             Text("kg/CO2")
-                                .font(.title3)
+                                //.font(.title3)
+                                .font(.subheadline)
                         }
                     )
             }

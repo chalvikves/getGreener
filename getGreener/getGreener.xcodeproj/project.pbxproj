@@ -22,10 +22,15 @@
 		9292260925C7FFBF005C9904 /* MovingNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = 9292260825C7FFBF005C9904 /* MovingNumbersView */; };
 		92B6585325B4797B002B1C81 /* DailyQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585225B4797B002B1C81 /* DailyQuestions.swift */; };
 		92B6585B25B49FE8002B1C81 /* HealthGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585A25B49FE8002B1C81 /* HealthGroupBoxStyle.swift */; };
-		92B6586025B4D12D002B1C81 /* TransportQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */; };
+		92B6586025B4D12D002B1C81 /* FirstTransportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6585F25B4D12D002B1C81 /* FirstTransportView.swift */; };
 		92B6586725B58BCB002B1C81 /* TransportationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6586625B58BCB002B1C81 /* TransportationMethod.swift */; };
 		92B7253826091CC100E18B1B /* DailyQuestionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7253726091CC100E18B1B /* DailyQuestionBox.swift */; };
 		92B7253E260A28E000E18B1B /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 92B7253D260A28E000E18B1B /* PartialSheet */; };
+		92BAC3B0260D539A00C2413B /* SecondTransportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC3AF260D539A00C2413B /* SecondTransportView.swift */; };
+		92BAC3B8260D53CB00C2413B /* ThirdTransportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC3B7260D53CB00C2413B /* ThirdTransportView.swift */; };
+		92BAC3BD261137B100C2413B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC3BC261137B100C2413B /* QuestionView.swift */; };
+		92BAC3C3261137EF00C2413B /* PageView in Frameworks */ = {isa = PBXBuildFile; productRef = 92BAC3C2261137EF00C2413B /* PageView */; };
+		92BAC3C92611E5FC00C2413B /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 92BAC3C82611E5FC00C2413B /* ToastUI */; };
 		92C499D5258822AF0062940F /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C499D4258822AF0062940F /* user.swift */; };
 		92C499E3258A736C0062940F /* CircleAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C499E2258A736C0062940F /* CircleAvatar.swift */; };
 		92E53E7A25CC27BF005E24E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E53E7925CC27BF005E24E0 /* HomeViewModel.swift */; };
@@ -75,9 +80,12 @@
 		926E7CA225A4F7200053DE4E /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		92B6585225B4797B002B1C81 /* DailyQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92B6585A25B49FE8002B1C81 /* HealthGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyle.swift; sourceTree = "<group>"; };
-		92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportQuestion.swift; sourceTree = "<group>"; };
+		92B6585F25B4D12D002B1C81 /* FirstTransportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTransportView.swift; sourceTree = "<group>"; };
 		92B6586625B58BCB002B1C81 /* TransportationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationMethod.swift; sourceTree = "<group>"; };
 		92B7253726091CC100E18B1B /* DailyQuestionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestionBox.swift; sourceTree = "<group>"; };
+		92BAC3AF260D539A00C2413B /* SecondTransportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTransportView.swift; sourceTree = "<group>"; };
+		92BAC3B7260D53CB00C2413B /* ThirdTransportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTransportView.swift; sourceTree = "<group>"; };
+		92BAC3BC261137B100C2413B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		92C499D4258822AF0062940F /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		92C499E2258A736C0062940F /* CircleAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatar.swift; sourceTree = "<group>"; };
 		92E53E7925CC27BF005E24E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -95,8 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BAC3C3261137EF00C2413B /* PageView in Frameworks */,
 				92B7253E260A28E000E18B1B /* PartialSheet in Frameworks */,
 				921C7B8C25ED6772005CD44B /* BetterSheet in Frameworks */,
+				92BAC3C92611E5FC00C2413B /* ToastUI in Frameworks */,
 				9292260925C7FFBF005C9904 /* MovingNumbersView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				92B6585225B4797B002B1C81 /* DailyQuestions.swift */,
-				92B6585F25B4D12D002B1C81 /* TransportQuestion.swift */,
+				92B6585F25B4D12D002B1C81 /* FirstTransportView.swift */,
+				92BAC3AF260D539A00C2413B /* SecondTransportView.swift */,
+				92BAC3B7260D53CB00C2413B /* ThirdTransportView.swift */,
+				92BAC3BC261137B100C2413B /* QuestionView.swift */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -288,6 +301,8 @@
 				9292260825C7FFBF005C9904 /* MovingNumbersView */,
 				921C7B8B25ED6772005CD44B /* BetterSheet */,
 				92B7253D260A28E000E18B1B /* PartialSheet */,
+				92BAC3C2261137EF00C2413B /* PageView */,
+				92BAC3C82611E5FC00C2413B /* ToastUI */,
 			);
 			productName = getGreener;
 			productReference = 9254005125790508003A45B1 /* getGreener.app */;
@@ -364,6 +379,8 @@
 				9292260725C7FFBE005C9904 /* XCRemoteSwiftPackageReference "MovingNumbersView" */,
 				921C7B8A25ED6772005CD44B /* XCRemoteSwiftPackageReference "BetterSheet" */,
 				92B7253C260A28DF00E18B1B /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				92BAC3C1261137EF00C2413B /* XCRemoteSwiftPackageReference "PageView" */,
+				92BAC3C72611E5FC00C2413B /* XCRemoteSwiftPackageReference "ToastUI" */,
 			);
 			productRefGroup = 9254005225790508003A45B1 /* Products */;
 			projectDirPath = "";
@@ -407,7 +424,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BAC3BD261137B100C2413B /* QuestionView.swift in Sources */,
 				92B6586725B58BCB002B1C81 /* TransportationMethod.swift in Sources */,
+				92BAC3B0260D539A00C2413B /* SecondTransportView.swift in Sources */,
 				926E7CA325A4F7200053DE4E /* PersonView.swift in Sources */,
 				92B6585B25B49FE8002B1C81 /* HealthGroupBoxStyle.swift in Sources */,
 				92E53E7A25CC27BF005E24E0 /* HomeViewModel.swift in Sources */,
@@ -420,6 +439,7 @@
 				92E53F1425CF0247005E24E0 /* PieChart.swift in Sources */,
 				92E53F1F25CF25E9005E24E0 /* PieChartViewModel.swift in Sources */,
 				9254005525790508003A45B1 /* getGreenerApp.swift in Sources */,
+				92BAC3B8260D53CB00C2413B /* ThirdTransportView.swift in Sources */,
 				92B7253826091CC100E18B1B /* DailyQuestionBox.swift in Sources */,
 				924B2AFC258B71C600137DE6 /* friendsView.swift in Sources */,
 				92FDBDB3259129C400B64B7C /* Home.swift in Sources */,
@@ -427,7 +447,7 @@
 				92E53F1925CF24A3005E24E0 /* PieChartModel.swift in Sources */,
 				926DAF3725A79680009929F2 /* FriendView.swift in Sources */,
 				925400832579056F003A45B1 /* types.swift in Sources */,
-				92B6586025B4D12D002B1C81 /* TransportQuestion.swift in Sources */,
+				92B6586025B4D12D002B1C81 /* FirstTransportView.swift in Sources */,
 				92B6585325B4797B002B1C81 /* DailyQuestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +794,22 @@
 				minimumVersion = 2.1.11;
 			};
 		};
+		92BAC3C1261137EF00C2413B /* XCRemoteSwiftPackageReference "PageView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fredyshox/PageView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+		92BAC3C72611E5FC00C2413B /* XCRemoteSwiftPackageReference "ToastUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanshousio/ToastUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -791,6 +827,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 92B7253C260A28DF00E18B1B /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		92BAC3C2261137EF00C2413B /* PageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92BAC3C1261137EF00C2413B /* XCRemoteSwiftPackageReference "PageView" */;
+			productName = PageView;
+		};
+		92BAC3C82611E5FC00C2413B /* ToastUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92BAC3C72611E5FC00C2413B /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

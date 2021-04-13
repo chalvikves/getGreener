@@ -19,6 +19,7 @@ struct DailyQuestions: View {
     @State private var doIWantThisViewToShow = false
     @State private var stageTransport = 2.0
     private var totalStage = 3.0
+    @State var showView = false
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -38,7 +39,7 @@ struct DailyQuestions: View {
                     
                     VStack{
                         
-                        NavigationLink(destination: FirstView()){
+                        NavigationLink(destination: QuestionView(), isActive: self.$showView){
                             VStack{
                                 DailyQuestionBox(title: "Transport", image: "car", color: Color("Green"), stageQuestion: stageTransport, totalQuestion: totalStage, value: 30, unit: "Kg")
                             }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PartialSheet
+import PageView
 
 struct Home: View {
     
@@ -15,6 +16,10 @@ struct Home: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var model = PersonViewModel()
 
+    // MARK: Lägg i viewmodel
+    
+    @State var pageIndex = 0
+    let theme = PageControlTheme(backgroundColor: Color("Main"), dotActiveColor: Color("SecondaryText"), dotInactiveColor: Color(.systemGray5), dotSize: 7.0, spacing: 9.0, padding: 4.0, xOffset: 12.0, yOffset: -12.0)
     
     var body: some View {
         
@@ -147,51 +152,62 @@ struct Home: View {
             Spacer().frame(height: 15)
             
             HStack{
-                Spacer()
+                //Spacer()
                 
-                PieChart(viewModel: viewModel)
-                    .frame(width: UIScreen.main.bounds.size.width/1.3, height: 300)
-                    .padding(.all, 20)
-                    .shadow(radius: 15)
-                    .padding(.bottom, 10)
-                
-                Spacer()
-            }
-            
-            Color("Main")
-                .overlay(
+                VStack{
                     ForEach(0..<viewModel.data.count, id: \.self) {index in
                         let element = viewModel.data[index]
                         
                         Button(action: {print("hi")}){
                             HStack{
                                 Circle()
-                                    .frame(width: 25, height: 25)
+                                    .frame(width: 15, height: 15)
                                     .foregroundColor(element.color)
                                 
+                                
+                                Text("\( Int(100 * element.percentage)) %")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color("SecondaryText"))
+                                
                                 Text(element.description)
-                                    .foregroundColor(Color("MainText"))
+                                    .foregroundColor(Color("SecondaryText"))
+                                    .fontWeight(.semibold)
+                                    .font(.subheadline)
                                 
                                 Spacer()
                                 
-                                Text("\( Int(150 * element.percentage))")
-                                
-                                Text("kg/CO2")
-                                    .font(.caption)
-                                    .padding(.leading, -5)
                                 
                             }
                         }.padding(.vertical, 5)
                         
                         
-                    }.padding()
-                )
-                .cornerRadius(15)
-                .padding()
-                .shadow(color: Color("LightShadow"), radius: 5)
+                    }
+                }
                 
+                //PieChart(viewModel: viewModel, width: 225, height: 225)
+                PieChart(viewModel: viewModel, width: 115, height: 115)
+                    .frame(width: UIScreen.main.bounds.size.width/2.5)
+                    //.padding(.all, 20)
+                    //.shadow(color: Color("LightShadow"), radius: 5)
+                    .padding(.bottom, 10)
+                
+                //Spacer()
+            }
+        
+            Spacer()
             
-           Spacer()
+            Text("Tips för att minska ditt utsläpp")
+                .fontWeight(.semibold)
+            
+            
+            HPageView(selectedPage: $pageIndex, theme: theme){
+                TipsView(color: .black, title: "Hej", tips: "Din jfjfjfjjf")
+                TipsView(color: .green, title: "Hss", tips: "Din jfsfjjf")
+                TipsView(color: .blue, title: "Hqf", tips: "Din jfjfjfasdf")
+            }.border(Color(.black), width: 2)
+            
+            Spacer()
                 
             
         }
@@ -201,58 +217,36 @@ struct Home: View {
     
 }
 
-
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
-
-struct DetailedView: View {
-    var description: String
-    var icon: String
-    var information: String
-    var color: Color
-    
-    var body: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(color)
-                .frame(width: 200, height: 100)
-        
-            HStack{
-                Image(systemName: icon)
-                Text(description)
-                    
-            }.foregroundColor(.white)
-        }
-    }
-}
-
 struct TipsView: View {
-    var image: String
+    var color: Color
     var title: String
-    var description: String
+    var tips: String
     
     var body: some View {
   
-        HStack{
-            Image(image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
-                .padding(.leading, -30)
+        VStack{
+            
+            HStack{
+                Circle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(color)
                 
+                Text(title)
+                    .foregroundColor(Color("SecondaryText"))
+                    .fontWeight(.semibold)
+                    .font(.subheadline)
+
+            }
+            
+            Text(tips)
+                .foregroundColor(Color("SecondaryText"))
+                .fontWeight(.semibold)
+                .font(.subheadline)
             
             Spacer()
             
-            Text(description)
-                .padding(.trailing, 20)
-                .rotationEffect(Angle(degrees: 30))
-                
-            
-        }.padding(.horizontal)
+        }
+        .padding()
         
     
     }
