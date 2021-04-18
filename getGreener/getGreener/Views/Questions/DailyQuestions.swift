@@ -15,6 +15,8 @@ let consumtion = "Ange konsumtion idag"
 
 struct DailyQuestions: View {
 
+    @StateObject var model = DailyQuestionsViewModel()
+    
     
     @State private var doIWantThisViewToShow = false
     @State private var stageTransport = 2.0

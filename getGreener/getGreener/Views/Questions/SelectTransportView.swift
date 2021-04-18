@@ -1,5 +1,5 @@
 //
-//  SecondTransportView.swift
+//  SelectTransportView.swift
 //  getGreener
 //
 //  Created by Viktor Vestlund on 2021-03-26.
@@ -8,19 +8,12 @@
 import SwiftUI
 import ToastUI
 
-struct SecondTransportView: View {
+struct SelectTransportView: View {
     
-    @Binding var pageIndex: Int
-    @Binding var selectedWalk: Bool
-    @Binding var selectedBike: Bool
-    @Binding var selectedCar: Bool
-    @Binding var selectedTrain: Bool
-    @Binding var selectedBus: Bool
-    @Binding var selectedNothing: Bool
-    @State var showToast = false
+    // Viewmodel
+    @StateObject var model: DailyQuestionsViewModel
     
     var body: some View {
-        
         
         VStack(alignment: .leading){
             
@@ -39,17 +32,17 @@ struct SecondTransportView: View {
             
             
             VStack(spacing: 10){
-                TransportationMethod(image: "figure.walk", title: "   Gå", selected: $selectedWalk)
+                TransportationMethod(image: "figure.walk", title: "   Gå", selected: $model.selectedWalk)
                 
-                TransportationMethod(image: "bicycle", title: "Cykel", selected: $selectedBike)
+                TransportationMethod(image: "bicycle", title: "Cykel", selected: $model.selectedBike)
                 
-                TransportationMethod(image: "car", title: "  Bil", selected: $selectedCar)
+                TransportationMethod(image: "car", title: "  Bil", selected: $model.selectedCar)
                 
-                TransportationMethod(image: "tram", title: "   Tåg", selected: $selectedTrain)
+                TransportationMethod(image: "tram", title: "   Tåg", selected: $model.selectedTrain)
                 
-                TransportationMethod(image: "bus.fill", title: "   Buss", selected: $selectedBus)
+                TransportationMethod(image: "bus.fill", title: "   Buss", selected: $model.selectedBus)
                 
-                TransportationMethod(image: "bed.double", title: "   Inget", selected: $selectedNothing)
+                TransportationMethod(image: "bed.double", title: "   Inget", selected: $model.selectedNothing)
                 
             }.padding(.bottom)
             .padding(.horizontal)
@@ -59,13 +52,11 @@ struct SecondTransportView: View {
                 Spacer()
                 
                 Button(action: {
-                    if !(selectedBus || selectedBike || selectedCar || selectedWalk || selectedTrain || selectedNothing) {
-                        showToast.toggle()
+                    if model.errorHandleCheck() {
+                        model.showToast.toggle()
                     }
                     else{
-                        withAnimation {
-                            self.pageIndex = 1
-                        }
+                        model.setPageIndex(1)
                     }
                 }){
                     Text("Gå vidare")
@@ -75,7 +66,7 @@ struct SecondTransportView: View {
                 .padding()
                 .background(Color("Green"))
                 .cornerRadius(30)
-                .toast(isPresented: $showToast, dismissAfter: 1.5){
+                .toast(isPresented: $model.showToast, dismissAfter: 1.5){
                     ToastView("Du måste välja minst ett alternativ"){
                         
                     } background: {

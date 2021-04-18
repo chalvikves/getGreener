@@ -13,22 +13,11 @@ struct FirstTransportView: View {
     // MARK: Göra en standard sida för alla frågor och skicka in content som variabel så man kan ändra utifrån det. Kolla mobbin.design patterns quizzes.
     // MARK: Använd PagesView för att visa alla sidor. 
     
-    @State private var val = ""
-    @State private var sel: Int? = 0
-    @State private var isEditingText = false
-    @State private var total = 0
+    // ViewModels
+    @StateObject var model: DailyQuestionsViewModel
     @StateObject var global: Global = Global()
     
-    
-    @Binding var showView: Bool
-    
-    let numFormatter = NumberFormatter()
-    
-    @Binding var pageIndex: Int
-    @State var showToast = false
-    
     var body: some View {
-        
         
         VStack(alignment: .leading){
             
@@ -41,11 +30,11 @@ struct FirstTransportView: View {
                 
             TextField(
                 "Ange antal km",
-                text: $val
+                text: $model.val
             ){ isEditing in
-                self.isEditingText = isEditing
+                model.isEditingText = isEditing
             } onCommit: {
-                print(val)
+                print(model.val)
             }
             .font(.title)
             .foregroundColor(Color("Pastel"))
@@ -69,9 +58,9 @@ struct FirstTransportView: View {
                     
                     Button("Avbryt") {
                         hideKeyboard()
-                        self.showView = false
+                        model.showView = false
                         withAnimation {
-                            self.pageIndex = 0
+                            model.pageIndex = 0
                         }
                         
                     }
@@ -82,15 +71,15 @@ struct FirstTransportView: View {
                     .cornerRadius(30)
                     
                     Button(action: {
-                        if val.isEmpty {
-                            showToast.toggle()
+                        if model.val.isEmpty {
+                            model.showToast.toggle()
                         }
                         else {
                             hideKeyboard()
-                            self.showView = false
-                            print(val)
+                            model.showView = false
+                            print(model.val)
                             withAnimation {
-                                self.pageIndex = 0
+                                model.pageIndex = 0
                             }
                         }
                     }){
@@ -101,7 +90,7 @@ struct FirstTransportView: View {
                     .padding()
                     .background(Color("Green"))
                     .cornerRadius(30)
-                    .toast(isPresented: $showToast, dismissAfter: 1.5){
+                    .toast(isPresented: $model.showToast, dismissAfter: 1.5){
                         ToastView("Du måste ange antal km"){
                             
                         } background: {
